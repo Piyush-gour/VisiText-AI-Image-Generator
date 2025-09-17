@@ -8,9 +8,9 @@
     {
       "src": "Client/package.json",
       "use": "@vercel/static-build",
-      "config": { 
+      "config": {
         "distDir": "dist",
-        "installCommand": "cd Client && rm -rf node_modules package-lock.json && npm install --legacy-peer-deps && cd ../Server && rm -rf node_modules package-lock.json && npm install --legacy-peer-deps",
+        "installCommand": "cd Client && npm install --legacy-peer-deps",
         "buildCommand": "cd Client && npm run build"
       }
     }
@@ -21,31 +21,13 @@
       "dest": "/Server/server.js"
     },
     {
-      "src": "^/static/(.*)",
-      "dest": "/Client/static/$1"
+      "src": "/(.*)",
+      "dest": "/Client/dist/$1",
+      "check": true
     },
     {
-      "src": "^/assets/(.*)",
-      "dest": "/Client/dist/assets/$1"
-    },
-    {
-      "src": "^/favicon.ico",
-      "dest": "/Client/dist/favicon.ico"
-    },
-    {
-      "src": "^/robots.txt",
-      "dest": "/Client/dist/robots.txt"
-    },
-    {
-      "src": "^/manifest.json",
-      "dest": "/Client/dist/manifest.json"
-    },
-    {
-      "src": "^/(.*)",
+      "src": "/(.*)",
       "dest": "/Client/dist/index.html"
     }
-  ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

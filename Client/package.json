@@ -19,18 +19,24 @@
     "react-toastify": "^11.0.5",
     "tailwindcss": "^4.1.11"
   },
+  "overrides": {
+    "vite": {
+      "@esbuild/win32-x64": "0.21.5"
+    }
+  },
   "resolutions": {
     "framer-motion": "6.5.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.30.1",
+    "@eslint/js": "^8.56.0",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
-    "@vitejs/plugin-react": "^4.6.0",
-    "eslint": "^9.30.1",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.3.0",
-    "vite": "^7.0.3"
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "globals": "^13.24.0",
+    "esbuild": "^0.19.12",
+    "vite": "^5.0.10"
   }
 }
