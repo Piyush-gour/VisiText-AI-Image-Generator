@@ -10,7 +10,7 @@
       "use": "@vercel/static-build",
       "config": { 
         "distDir": "dist",
-        "installCommand": "cd Client && npm install --legacy-peer-deps && cd .. && cd Server && npm install --legacy-peer-deps",
+        "installCommand": "cd Client && rm -rf node_modules package-lock.json && npm install --legacy-peer-deps && cd ../Server && rm -rf node_modules package-lock.json && npm install --legacy-peer-deps",
         "buildCommand": "cd Client && npm run build"
       }
     }
